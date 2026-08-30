@@ -1,0 +1,31 @@
+project_name: separator-baseline
+seed: 42
+
+data:
+  root: data/processed/public_books
+  image_size: 640
+  num_workers: 2
+
+model:
+  architecture: lraspp_mobilenet_v3_large
+  pretrained_backbone: true
+  num_classes: 2
+
+training:
+  output_dir: runs/separator-baseline
+  resume: null
+  epochs: 40
+  batch_size: 8
+  learning_rate: 0.0003
+  weight_decay: 0.0001
+  separator_class_weight: 8.0
+  dice_weight: 1.0
+  amp: true
+  patience: 8
+
+postprocess:
+  pixel_threshold: 0.45
+  peak_height: 0.30
+  peak_prominence: 0.08
+  smoothing_window: 9
+  minimum_peak_distance: 8

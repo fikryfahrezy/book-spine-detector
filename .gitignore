@@ -1,0 +1,22 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+.DS_Store
+
+# Local datasets and generated artifacts
+ml/data/raw/
+ml/data/processed/
+ml/runs/
+models/source/*
+models/exported/*
+!models/source/.gitkeep
+!models/exported/.gitkeep
+*.onnx
+*.pt
+*.pth
+
+# Jupyter
+.ipynb_checkpoints/

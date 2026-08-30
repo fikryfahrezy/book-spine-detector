@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "book-spine-ml"
+version = "0.1.0"
+description = "Mobile-friendly book separator segmentation training scaffold"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "Pillow>=10.0",
+  "PyYAML>=6.0",
+  "scipy>=1.11",
+  "torch>=2.2,<3",
+  "torchvision>=0.17,<1",
+  "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+notebook = [
+  "ipywidgets>=8.1",
+  "jupyterlab>=4.0",
+  "matplotlib>=3.8",
+  "onnx>=1.15",
+  "onnxruntime>=1.17",
+]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.5",
+]
+
+[project.scripts]
+book-spine-prepare-yolo = "book_spine_ml.prepare_yolo:main"
+book-spine-train = "book_spine_ml.train:main"
+book-spine-evaluate = "book_spine_ml.evaluate:main"
+book-spine-export = "book_spine_ml.export_onnx:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
