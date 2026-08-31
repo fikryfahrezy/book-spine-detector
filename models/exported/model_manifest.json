@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "model_version": "separator-baseline-2026-08-31",
+  "format": "onnx",
+  "opset": 17,
+  "artifacts": [
+    {
+      "name": "separator_model.onnx",
+      "sha256": "ef5a5d27702c0c8c857d47c6fcc2e2e3caaac41c4df65e034e59463788c634ce"
+    },
+    {
+      "name": "separator_model.onnx.data",
+      "sha256": "40d901d147b4c1ca8d5a7b9cee4c3c2e74da8d3d3029132b2d709c1f233fec30"
+    }
+  ],
+  "input": {
+    "name": "image",
+    "shape": [1, 3, 640, 640],
+    "layout": "NCHW",
+    "color": "RGB",
+    "data_type": "float32",
+    "resize": "aspect-fit-letterbox-bilinear",
+    "letterbox_fill_rgb": [0, 0, 0],
+    "mean": [0.485, 0.456, 0.406],
+    "std": [0.229, 0.224, 0.225]
+  },
+  "output": {
+    "name": "separator_logits",
+    "shape": [1, 2, 640, 640],
+    "separator_class": 1
+  },
+  "postprocess": {
+    "pixel_threshold": 0.45,
+    "peak_height": 0.30,
+    "peak_prominence": 0.08,
+    "smoothing_window": 9,
+    "minimum_peak_distance": 8
+  }
+}

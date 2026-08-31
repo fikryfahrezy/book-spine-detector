@@ -17,8 +17,10 @@ book-spine-detector/
 └── docs/               # Architecture and product documentation
 ```
 
-The current implementation is the ML training scaffold. See [ml/README.md](ml/README.md)
-for dataset preparation, Colab training, evaluation, manual testing, and model export.
+The repository includes the ML training scaffold and an offline native Android scanner. See
+[ml/README.md](ml/README.md) for dataset preparation, Colab training, evaluation, manual testing,
+and model export. See [apps/android/README.md](apps/android/README.md) for the Android build,
+architecture, and device-verification checklist.
 See [docs/TODO.md](docs/TODO.md) for the model-improvement and native mobile roadmap.
 
 ## Google Colab quick start

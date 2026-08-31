@@ -211,22 +211,22 @@ ONNX Runtime officially supports C/C++ on both Android and iOS:
 
 ## Phase 5 — Native Android application
 
-- [ ] Create `apps/android` as a Kotlin/Jetpack Compose application.
-- [ ] Implement camera permission, preview, lifecycle, pause/resume, and error states.
-- [ ] Use CameraX `ImageAnalysis` with `STRATEGY_KEEP_ONLY_LATEST` so inference never queues stale
+- [x] Create `apps/android` as a Kotlin/Jetpack Compose application.
+- [x] Implement camera permission, preview, lifecycle, pause/resume, and error states.
+- [x] Use CameraX `ImageAnalysis` with `STRATEGY_KEEP_ONLY_LATEST` so inference never queues stale
   frames: <https://developer.android.com/media/camera/camerax/analyze>.
-- [ ] Convert camera YUV/RGBA frames consistently and apply rotation/mirroring before inference.
-- [ ] Add a single-stack framing guide and explicit `Move closer`, `Show full stack`, and
+- [x] Convert camera RGBA frames consistently and apply rotation before inference.
+- [x] Add a single-stack framing guide and explicit `Move closer`, `Show full stack`, and
   `Hold steady` guidance.
-- [ ] Load the versioned ONNX/ORT model once per session.
+- [x] Load the versioned ONNX/ORT model once per session.
 - [ ] Integrate the shared C++ core and ONNX Runtime native library with CMake/Gradle.
 - [ ] Integrate the JNI binding and verify tensor names, shapes, and buffer ownership.
-- [ ] Map boundaries from model/ROI coordinates into preview coordinates.
-- [ ] Draw numbered separator overlays and the stabilized count in real time.
-- [ ] Throttle inference to a measured device-appropriate rate; continue showing camera preview at
+- [x] Map boundaries from model/ROI coordinates into preview coordinates.
+- [x] Draw numbered separator overlays and the stabilized count in real time.
+- [x] Throttle inference to an initial device rate; continue showing camera preview at
   full frame rate.
-- [ ] Require several consistent frames before presenting a locked count.
-- [ ] Add rescan, confirm, and human-review actions.
+- [x] Require several consistent frames before presenting a locked count.
+- [x] Add rescan, confirm, and human-review actions.
 - [ ] Record optional, privacy-approved failure examples only with operator consent.
 - [ ] Add unit tests, screenshot/UI tests, instrumentation tests, and physical-device benchmarks.
 - [ ] Test lifecycle interruption, screen rotation, thermal throttling, memory pressure, and
