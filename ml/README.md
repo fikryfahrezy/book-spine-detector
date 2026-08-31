@@ -15,7 +15,7 @@ for public-dataset feasibility work, not manufacturing QC acceptance.
 - Weighted cross-entropy plus Dice training loss for thin separator masks.
 - Train, evaluate, and ONNX export command-line tools.
 - A Colab/local Jupyter training notebook.
-- A Jupyter upload UI for manually testing photographs and tuning peak extraction.
+- A Colab-native upload workflow for manually testing photographs.
 
 ## 1. Create an environment
 
@@ -117,19 +117,16 @@ book-spine-evaluate \
 This reports segmentation Dice/IoU and provisional count MAE/exact-count accuracy. Public
 bookshelf metrics do not represent expected factory accuracy.
 
-## 6. Test manually in Jupyter
+## 6. Test manually in Google Colab
 
-Open `notebooks/manual_test.ipynb`, run both cells, upload an image, and select **Run model**.
-The UI provides controls for:
-
-- Automatic, vertical, or horizontal boundary orientation.
-- Pixel probability threshold.
-- Projection peak height.
-- Peak prominence.
-- Minimum distance between boundaries.
+Use the native upload cell at the end of `notebooks/train_colab.ipynb`. It loads one image with
+`google.colab.files.upload()`, runs the selected checkpoint, and displays the detected boundaries
+and count. Change the post-processing values in that cell to tune orientation, pixel threshold,
+peak height, peak prominence, and minimum boundary distance.
 
 Increasing minimum distance merges nearby double detections. Increasing prominence or peak
-height removes weak false separators.
+height removes weak false separators. The native Colab uploader is intentionally kept in the
+notebook rather than the reusable Python package.
 
 ## 7. Export ONNX
 
@@ -149,8 +146,7 @@ ml/
 ├── configs/
 ├── data/
 ├── notebooks/
-│   ├── train_colab.ipynb
-│   └── manual_test.ipynb
+│   └── train_colab.ipynb
 ├── src/book_spine_ml/
 ├── tests/
 └── pyproject.toml
