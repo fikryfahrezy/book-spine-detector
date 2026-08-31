@@ -10,7 +10,7 @@ book-spine-detector/
 ├── apps/
 │   ├── android/        # Native Android application (planned)
 │   └── ios/            # Native iOS application (planned)
-├── crates/             # Shared Rust inference/processing code (planned)
+├── core/               # Shared C++ inference/processing library (planned)
 ├── models/
 │   ├── source/         # Curated PyTorch training checkpoints
 │   └── exported/       # Curated mobile-ready model artifacts
@@ -19,6 +19,7 @@ book-spine-detector/
 
 The current implementation is the ML training scaffold. See [ml/README.md](ml/README.md)
 for dataset preparation, Colab training, evaluation, manual testing, and model export.
+See [docs/TODO.md](docs/TODO.md) for the model-improvement and native mobile roadmap.
 
 ## Google Colab quick start
 
@@ -27,4 +28,3 @@ for dataset preparation, Colab training, evaluation, manual testing, and model e
 %cd /content/book-spine-detector/ml
 !pip install -e ".[notebook]"
 ```
-
