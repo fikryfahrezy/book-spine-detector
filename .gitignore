@@ -12,11 +12,19 @@ ml/data/processed/
 ml/runs/
 models/source/*
 models/exported/*
-!models/source/.gitkeep
-!models/exported/.gitkeep
 *.onnx
 *.pt
 *.pth
+
+# Curated model artifacts may be committed during the prototype phase.
+!models/source/.gitkeep
+!models/source/*.pt
+!models/source/*.pth
+!models/source/*.json
+!models/exported/.gitkeep
+!models/exported/*.onnx
+!models/exported/*.onnx.data
+!models/exported/*.json
 
 # Jupyter
 .ipynb_checkpoints/

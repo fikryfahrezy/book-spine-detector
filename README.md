@@ -12,8 +12,8 @@ book-spine-detector/
 │   └── ios/            # Native iOS application (planned)
 ├── crates/             # Shared Rust inference/processing code (planned)
 ├── models/
-│   ├── source/         # Source model artifacts (not committed)
-│   └── exported/       # Mobile-ready model artifacts (not committed)
+│   ├── source/         # Curated PyTorch training checkpoints
+│   └── exported/       # Curated mobile-ready model artifacts
 └── docs/               # Architecture and product documentation
 ```
 

@@ -1,0 +1,4 @@
+models/source/*.pt binary
+models/source/*.pth binary
+models/exported/*.onnx binary
+models/exported/*.onnx.data binary
