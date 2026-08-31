@@ -24,6 +24,7 @@ notebook = [
   "jupyterlab>=4.0",
   "matplotlib>=3.8",
   "onnx>=1.15",
+  "onnxscript>=0.3",
   "onnxruntime>=1.17",
 ]
 dev = [
@@ -46,4 +47,3 @@ testpaths = ["tests"]
 [tool.ruff]
 line-length = 100
 target-version = "py310"
-
